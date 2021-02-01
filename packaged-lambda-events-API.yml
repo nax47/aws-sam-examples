@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Test Pipeline Lambda
+Resources:
+  hellofunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: hello_country.lambda_handler
+      Runtime: python3.7
+      CodeUri: s3://samplebucket5376983743/fd29d7eecb553b50f6404b943c51dfe8
+      Description: Sample SAM Lambda Deployment
+      Events:
+        APIEvent:
+          Type: Api
+          Properties:
+            Path: /photos
+            Method: get

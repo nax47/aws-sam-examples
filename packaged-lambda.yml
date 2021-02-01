@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Test Pipeline Lambda
+Resources:
+  samfunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: hello_country.handler
+      Runtime: python3.8
+      CodeUri: s3://samplebucket5376983743/7b31c20c02bcbe38418c56d2c29875ac
+      Description: Sample SAM Lambda Deployment
